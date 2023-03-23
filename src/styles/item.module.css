@@ -1,0 +1,160 @@
+.item {
+  width: 250px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 0.5px solid #0505051e;
+ /*  display: grid;
+  place-content: center;
+  grid-template-rows: max-content;
+  grid-template-columns: 100%;
+  grid-template-areas: "image"; */
+}
+
+.image {
+  width: 100%;
+  height: max-content;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  mix-blend-mode: darken;
+
+}
+
+.title {
+  width: 100%;
+  height: 60px;
+  max-height: 60px;
+  display: flex;
+  padding: 5px;
+  outline: 1px solid var(--Eerie-Black-Alpha);
+  background-color: var(--Snow);
+}
+
+.title h4 {
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  color: var(--Eerie-Black);
+}
+
+.details {
+  width: 100%;
+  height: max-content;
+  padding: 0 10px 0 10px;
+}
+
+.detailsContainer {
+  width: 100%;
+  height: max-content;
+  background-color: var(--Snow);
+  position: absolute;
+  padding-bottom: 20px;
+  top: 68%;
+}
+
+.item:hover > .detailsContainer {
+  top: 55%;
+  transition: all 0.5s ease-in;
+}
+
+.colorContainer {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.colorSample {
+  width: 15px;
+  height: 15px;
+  outline: 2px solid var(--Eerie-Black-Alpha);
+  border-radius: 50%;
+  background-color: pu;
+}
+
+.prices {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  color: var(--Persian-Green);
+}
+
+.price::before{
+  content: '$';
+}
+
+.oldPrice {
+  font-size: 14px;
+  color: #00000057;
+  text-decoration: line-through;
+}
+
+.oldPrice::before{
+  content: '$';
+}
+
+.buttonContainer {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.addButton,
+.buyButton {
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
+  background-color: var(--Persian-Green);
+  font-weight: 700;
+  border-radius: 50px;
+  border: none;
+  color: var(--Snow);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty span {
+  visibility: hidden;
+}
+
+.favorite {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 100;
+  left: 85%;
+  top: 2.5%;
+  border-radius: 50%;
+}
+
+.favorite label {
+  font-size: 24px;
+  color: var(--Persian-Green);
+  transition: all 0.2s ease-in;
+}
+
+.favorite label:hover {
+  font-size: 28px;
+  cursor: pointer;
+}

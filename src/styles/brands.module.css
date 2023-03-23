@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brands{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    animation: train 15s linear infinite forwards;
+}
+
+@keyframes train {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
