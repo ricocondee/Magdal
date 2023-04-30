@@ -9,49 +9,54 @@ import Brands from "../containers/Brands";
 import Products from "../containers/Products";
 
 const Home = () => {
-  const [phones, setPhones] = useState(null);
+  //componente
+  const [phones, setPhones] = useState(null); //estado donde se almacena los datos que se consumen de la API 
   useEffect(() => {
+    //hook con funcio adincrona para consumir la api cada que la pagina se actualize [tarea: en lo posible unificar todos los llamados a la api en un archivo]
     const getHeadphones = async () => {
-      const API = "https://myfakestoreapi.onrender.com";
-      const endPh = "api/products/type/phone";
+      //se hace asincrona la funcion
+      const API = "https://myfakestoreapi.onrender.com"; //URL de la API
+      const endPh = "api/products/type/phone"; //End Point
       try {
-        const phones = await getProducts(API, endPh);
-        setPhones(phones);
+        //Manejo de errores
+        const phones = await getProducts(API, endPh); //espero por los datos
+        setPhones(phones); //seteo el state
       } catch (err) {
         console.log(err);
       }
     };
     getHeadphones();
   }, []);
-      return (
-        <>
-          <div className={homeStyles.promoContainer}>
-            <Slider
-              text="50% Off On Selected Headphones"
-              image={promoProduct1}
-            />
-            {phones && <Card
-              title={`${phones[7].brand === 1 ? "Apple" : "Samsung"} ${
-                phones[7].name
-              } ${phones[7].color} ${phones[7].ram} ${phones[7].rom}`}
-              image={phones[7].image}
-              details="limited time offer"
-              price={phones[7].price}
-            />}
-            {phones && <Card
-              title={`${phones[19].brand === 1 ? "Apple" : "Samsung"} ${
-                phones[19].name
-              } ${phones[19].color} ${phones[19].ram} ${phones[19].rom}`}
-              image={phones[19].image}
-              details="limited time offer"
-              price={phones[19].price}
-            />}
-          </div>
-          <CategoriesImage />
-          <Products />
-          <Brands />
-        </>
-      );
-    }
+  return (
+    <>
+      <div className={homeStyles.promoContainer}>
+        <Slider text="50% Off On Selected Headphones" image={promoProduct1} />
+        {phones && (
+          <Card
+            title={`${phones[7].brand === 1 ? "Apple" : "Samsung"} ${
+              phones[7].name
+            } ${phones[7].color} ${phones[7].ram} ${phones[7].rom}`}
+            image={phones[7].image}
+            details="limited time offer"
+            price={phones[7].price}
+          />
+        )}
+        {phones && (
+          <Card
+            title={`${phones[19].brand === 1 ? "Apple" : "Samsung"} ${
+              phones[19].name
+            } ${phones[19].color} ${phones[19].ram} ${phones[19].rom}`}
+            image={phones[19].image}
+            details="limited time offer"
+            price={phones[19].price}
+          />
+        )}
+      </div>
+      <CategoriesImage />
+      <Products />
+      <Brands />
+    </>
+  );
+};
 
 export default Home;
