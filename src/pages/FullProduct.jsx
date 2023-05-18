@@ -19,7 +19,7 @@ const FullProduct = () => {
   return (
     <div className={fullProductStyles.container}>
       {productData?.map((prod) => (
-        <div>
+        <div key={prod.id}>
           <img src={prod.image} alt="" />
           <form action="">
             <h1>{prod.name}</h1>
