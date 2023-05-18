@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from "react";
-import getProducts from "../hooks/useGetProducts";
+import {getProducts, handleProductData} from "../hooks/useGetProducts";
 import "../styles/Products.css";
 import Item from "../components/Item";
 import { Link } from "react-router-dom";
 
 const Products = () => {
   const [data, setData] = useState(null);
-  const [productData, setProductData] = useState(null);
 
-  console.log(productData)
-  
-  const handleProductData = (itemId) =>{
-    fetch(`https://myfakestoreapi.onrender.com/api/products/${itemId}`)
-    .then(res => res.json())
-    .then(pData => setProductData(pData))
-    .catch(err => console.log(err))
-  }
-
-  useEffect(() => {//hook par allamar la api al iniciar la pagina, [tarea: en lo posible unificar todos los llamados a la api en un archivo]
+  useEffect(() => {//hook para llamar la api al iniciar la pagina, [tarea: en lo posible unificar todos los llamados a la api en un archivo]
     const getData = async () => {
       const API = "https://myfakestoreapi.onrender.com";
       const end = "api/products";

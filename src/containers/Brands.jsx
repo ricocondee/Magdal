@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BrandItem from "../components/BrandItem";
-import getProducts from "../hooks/useGetProducts";
+import {getProducts} from "../hooks/useGetProducts";
 import brandsStyles from "../styles/brands.module.css";
 
 const Brands = () => {

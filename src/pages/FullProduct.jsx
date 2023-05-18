@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import fullProductStyles from "../styles/fullProduct.module.css";
-import { handleProductData } from "../hooks/useGetProducts"; //importp a modo hook la funcion abstracta para obtener el producto seleccionado
+import { handleProductData } from "../hooks/useGetProducts"; //importo a modo hook la funcion abstracta para obtener el producto seleccionado
 
 const FullProduct = () => {
   const [productData, setProductData] = useState(null);//estado para producto seleccionado

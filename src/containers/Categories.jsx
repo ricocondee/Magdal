@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getProducts from "../hooks/useGetProducts";
+import {getProducts} from "../hooks/useGetProducts";
 import "../styles/categories.css";
 
 const Categories = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import getProducts from "../hooks/useGetProducts";
+import {getProducts} from "../hooks/useGetProducts";
 import Slider from "../components/Slider";
 import homeStyles from "../styles/home.module.css";
 import Card from "../components/Card";
@@ -12,7 +12,7 @@ const Home = () => {
   //componente
   const [phones, setPhones] = useState(null); //estado donde se almacena los datos que se consumen de la API 
   useEffect(() => {
-    //hook con funcio adincrona para consumir la api cada que la pagina se actualize [tarea: en lo posible unificar todos los llamados a la api en un archivo]
+    //hook con funcion asincrona para consumir la api cada que la pagina se actualize [tarea: en lo posible unificar todos los llamados a la api en un archivo]
     const getHeadphones = async () => {
       //se hace asincrona la funcion
       const API = "https://myfakestoreapi.onrender.com"; //URL de la API
