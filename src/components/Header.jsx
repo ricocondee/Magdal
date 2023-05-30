@@ -20,7 +20,8 @@ const Header = () => {
     <InfoHeader/>
       <header className="header">
         <div className="logo">
-          <img src={Logo} alt="" />
+          <a href="/"><img src={Logo} alt="Magdal Logo" /></a>
+          
         </div>
 
         <div className="categ__menu">
