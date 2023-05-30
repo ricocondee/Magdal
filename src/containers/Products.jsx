@@ -24,7 +24,7 @@ const Products = () => {
     <div className="items">
       {data &&
         data.map((item) => (
-          <Link to={`/product`} onClick={() => handleProductData(item.id)} key={item.id}>
+          <Link to={`/product`} onClick={() => handleProductData(item.id)} key={item.name}>
             <Item
               key={item.id}
               id={item.id}
