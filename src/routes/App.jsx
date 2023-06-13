@@ -5,6 +5,7 @@ import useInitialState from "../hooks/useInitialState";
 import AppContext from "../context/AppContext";
 import Home from '../pages/Home'
 import FullProduct from "../pages/FullProduct";
+import RegisterForm from "../pages/RegisterForm";
 
 const App = () => {
   const initialState = useInitialState();
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home />}/>
             <Route exact path="/product" element={<FullProduct />}/>
+            <Route exact path="/RegisterForm" element={<RegisterForm />}/>
           </Routes>
         </Layout>
       </BrowserRouter>
