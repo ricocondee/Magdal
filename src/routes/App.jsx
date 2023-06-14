@@ -6,6 +6,7 @@ import AppContext from "../context/AppContext";
 import Home from '../pages/Home'
 import FullProduct from "../pages/FullProduct";
 import Login from "../components/Login";
+import CartPage from "../pages/CartPage";
 const App = () => {
   const initialState = useInitialState();
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route exact path="/" element={<Home />}/>
             <Route exact path="/product" element={<FullProduct />}/>
             <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/cart" element={<CartPage />}></Route>
           </Routes>
         </Layout>
       </BrowserRouter>
