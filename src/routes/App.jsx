@@ -6,6 +6,7 @@ import AppContext from "../context/AppContext";
 import Home from '../pages/Home'
 import FullProduct from "../pages/FullProduct";
 import Login from "../components/Login";
+
 const App = () => {
   const initialState = useInitialState();
   return (
@@ -15,7 +16,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home />}/>
             <Route exact path="/product" element={<FullProduct />}/>
-            <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/login" element={<Login />}/>
           </Routes>
         </Layout>
       </BrowserRouter>
