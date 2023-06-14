@@ -4,7 +4,7 @@ import headerItems from '../styles/headerItems.module.css'
 const LoginItem = () => {
   return (
     <div className={headerItems.container}><MdLogin className={headerItems.MdLogin}/>
-    <span>Login</span></div>
+    <a href="/Login"><span>Login</span></a></div>
   )
 }
 
