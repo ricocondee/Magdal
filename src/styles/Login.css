@@ -4,19 +4,32 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    text-align: center;
+    background-color: #e6e5e5;
+    font-family: 'Poppins', sans-serif;
   }
   
   .login-form {
-    width: 300px;
+    width: 350px;
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     border-radius: 4px;
-    margin: 5px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+  }
+  .input-form{
+    width: 100%;
+    margin: 10px;
+    padding: 2px;
     align-items: center;
   }
   
   .login-form label {
     margin-bottom: 5px;
+    margin: 5px;
+    padding: 2px;
+    text-align: left;
   }
   
   .login-form input {
@@ -29,25 +42,53 @@
   }
   
   .login-form button {
-    padding: 10px 110px;
+    padding: 10px 100px;
     text-align-last: center;
     background-color: rgb(109, 227, 227);
     color: black;
-    border: 5px;
-    border-radius: 4px;
+    border: 15px;
+    border-radius: 5px;
     cursor: pointer;
+    margin: 10px;
+    align-items: center;
   }
-  h1{
+  .h-form{
+    margin: 10px;
+    padding: 5px;
     color: black;
     border: none;
-    align-items: left;
+    text-align: left;
   }
-  img{
-    width: 30%;
-    padding: auto;
-    border: 5px;
+  .img-form{
+    width: 70px;
+    height: 40px;
+    border: 5px 15px;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke;
   }
   label{
-    font-family: 'Times New Roman';
+    font-family: sans-serif;
+    margin: 5px;
+    padding: 2px;
+    text-align: left;
   }
-  
+  .linea{
+    display: flex;
+    justify-content: space-between;
+  }
+  hr{
+    border-bottom: 0px white;
+    background-color: #e8e8e8;
+    width: 180px;
+    margin: 10px;
+    align-items: center;
+    padding: 0%;
+  }
+  .registro{
+    text-align: center;
+    cursor: pointer;
+  }
