@@ -1,44 +1,53 @@
 import React, { useState, useEffect } from "react";
-import {getProducts, handleProductData} from "../hooks/useGetProducts";
+import { getProducts } from "../hooks/useGetProducts";
+import Button from "../components/Button";
 import "../styles/Products.css";
 import Item from "../components/Item";
-import { Link } from "react-router-dom";
 
 const Products = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
+  const [visibleProducts, setVisibleProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 36
 
-  useEffect(() => {//hook para llamar la api al iniciar la pagina, [tarea: en lo posible unificar todos los llamados a la api en un archivo]
+  useEffect(() => {
     const getData = async () => {
-      const API = "https://myfakestoreapi.onrender.com";
-      const end = "api/products";
+      const API = "https://magdal.live";
+      const end = "api/products/";
       try {
-        const data = await getProducts(API, end);
-        setData(data);
+        const fetchedData = await getProducts(API, end);
+        setData(fetchedData);
+        setVisibleProducts(fetchedData.slice(0, productsPerPage));
       } catch (err) {
         console.log(err);
       }
     };
     getData();
   }, []);
+
+  const totalPages = Math.ceil(data.length / productsPerPage);
+
+  const handleLoadMore = () => {
+    const nextPage = currentPage + 2;
+    const startIndex = (nextPage - 1) * productsPerPage;
+    const endIndex = nextPage * productsPerPage;
+    const nextBatch = data.slice(startIndex, endIndex);
+    setVisibleProducts([...visibleProducts, ...nextBatch]);
+    setCurrentPage(nextPage);
+  };
+
   return (
     <div className="items">
-      {data &&
-        data.map((item) => (
-          <Link to={`/product`} onClick={() => handleProductData(item.id)} key={item.name}>
-            <Item
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              color={item.color}
-              brand={item.brand}
-              price={item.price}
-              ram={item.ram}
-              rom={item.rom}
-              image={item.image}
-              colorSample={item.color}
-            />
-          </Link>
-        ))}
+      {visibleProducts.map((product) => (
+        <Item
+          product={product}
+          key={product.id}
+        />
+      ))}
+      {currentPage < totalPages && (
+        <Button func={handleLoadMore} text='Show More' classname='showMore'/>
+      )}
+      <span className="productsQuantity">{visibleProducts.length} of {data.length}</span>
     </div>
   );
 };
