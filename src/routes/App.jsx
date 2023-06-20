@@ -7,6 +7,8 @@ import Home from '../pages/Home'
 import FullProduct from "../pages/FullProduct";
 import Login from "../components/Login";
 import CartPage from "../pages/CartPage";
+import RegisterForm from "../pages/RegisterForm";
+import ProductSearch from "../pages/ProductSearch";
 const App = () => {
   const initialState = useInitialState();
   return (
@@ -18,6 +20,8 @@ const App = () => {
             <Route exact path="/product" element={<FullProduct />}/>
             <Route exact path="/login" element={<Login />}/>
             <Route exact path="/cart" element={<CartPage />}/>
+            <Route exact path="/signin" element={<RegisterForm/>}/>
+            <Route exact path="/search" element={<ProductSearch/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>
