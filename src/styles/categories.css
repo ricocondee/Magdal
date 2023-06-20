@@ -1,10 +1,12 @@
 .nav__categories {
-  width: 100%;
-  height: var(--header-navcat-height);
+  width: max-content;
+  height: 100vh;
+  position: absolute;
   padding: 10px;
   transition: all .5s ease-out;
   background-color: var(--Persian-Green);
   animation: navcat .5s forwards 0s ease-out alternate;
+  z-index: 200;
 }
 
 @keyframes navcat {

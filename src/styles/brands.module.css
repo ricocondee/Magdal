@@ -4,9 +4,9 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-}
-
-.brands{
+  }
+  
+  .brands {
     width: 90%;
     height: 90%;
     display: flex;
@@ -14,13 +14,24 @@
     align-items: center;
     padding: 20px;
     animation: train 15s linear infinite forwards;
-}
-
-@keyframes train {
-    0%{
-        transform: translateX(100%);
+  }
+  
+  @keyframes train {
+    0% {
+      transform: translateX(100%);
     }
-    100%{
-        transform: translateX(-100%);
+    100% {
+      transform: translateX(-100%);
     }
-}
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .brands {
+      padding: 10px;
+    }
+  }
+  

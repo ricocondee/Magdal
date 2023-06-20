@@ -1,0 +1,32 @@
+.container{
+    width: 100%;
+    height: max-content;
+    border: 1px solid var(--Jet-Alpha);
+    grid-area: products !important
+}
+
+.imageContainer{
+    width: max-content;
+}
+
+.imageContainer img{
+    width: 124px;
+    height: max-content;
+}
+
+.info{
+    width: 100%;
+}
+
+.info p{
+    color: var(--Persian-Green);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.delete{
+    width: 100%;
+    color: red;
+    font-size: 18px;
+    font-weight: 700;
+}
