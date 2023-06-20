@@ -5,7 +5,7 @@ const SelectCategories = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      const API = "https://myfakestoreapi.onrender.com";
+      const API = "https://magdal.live";
       const end = "api/categories";
       try {
         const data = await getProducts(API, end);
