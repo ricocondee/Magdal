@@ -1,10 +1,10 @@
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState,} from "react";
 import fullProductStyles from "../styles/fullProduct.module.css";
 import description from "../hooks/useDescription";
 import Button from "../components/Button";
 import { handleProductData } from "../hooks/useGetProducts"; //importo a modo hook la funcion abstracta para obtener el producto seleccionado
 
-const FullProduct = () => {
+const FullProduct = ({product}) => {
   const [productData, setProductData] = useState(null); //estado para producto seleccionado
   const [quantity, setQuantity] = useState(1);
   const more = (ev) => {
@@ -34,7 +34,7 @@ const FullProduct = () => {
       {productData?.map((prod) => (
         <form
           action="/product"
-          key={prod.id}
+          key={prod.name}
           className={fullProductStyles.form}
         >
           <div className={fullProductStyles.imageContainer}>

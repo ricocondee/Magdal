@@ -15,7 +15,7 @@ const Home = () => {
     //hook con funcion asincrona para consumir la api cada que la pagina se actualize [tarea: en lo posible unificar todos los llamados a la api en un archivo]
     const getHeadphones = async () => {
       //se hace asincrona la funcion
-      const API = "https://myfakestoreapi.onrender.com"; //URL de la API
+      const API = "https://magdal.live"; //URL de la API
       const endPh = "api/products/type/phone"; //End Point
       try {
         //Manejo de errores
