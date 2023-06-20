@@ -4,19 +4,9 @@ import itemStyles from "../styles/item.module.css";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import AppContext from "../context/AppContext";
 import { Link } from "react-router-dom";
-const Item = ({
-  id,
-  name,
-  size,
-  color,
-  brand,
-  category,
-  price,
-  ram,
-  rom,
-  image,
-  colorSample,
-}) => {
+import { handleProductData } from "../hooks/useGetProducts";
+
+const Item = ({ product }) => {
   const [check, setCheck] = useState(false);
   const handdleCheck = () => {
     setCheck(!check);
@@ -27,46 +17,52 @@ const Item = ({
   const handleClick = (item) => {
     addToCart(item);
   };
+
   return (
     <div className={itemStyles.item}>
       <div className={itemStyles.image}>
         <div className={itemStyles.favorite}>
-          <label htmlFor={id}>
+          <label htmlFor={product.id}>
             {check ? <MdFavorite /> : <MdFavoriteBorder />}
           </label>
           <input
             type="checkbox"
             name="fav"
-            id={id}
+            id={product.id}
             className={itemStyles.hidden}
             onChange={handdleCheck}
           />
         </div>
-        <img src={image} alt={name + " " + color} />
+        <img src={product.image} alt={product.name + " " + product.color} />
       </div>
       <div className={itemStyles.detailsContainer}>
         <div className={itemStyles.title}>
-          <Link to="/product">
-            {brand === 1 ? "Apple " : brand === 2 ? "Samsung " : ""}
-            {name} {color} {rom} {ram}
-          </Link>
+          <Link to={`/product`} onClick={() => handleProductData(product.id)}>{product.brand === 1
+              ? "Apple "
+              : product.brand === 2
+              ? "Samsung "
+              : ""}
+            {product.name} {product.color} {product.rom} {product.ram}</Link>
         </div>
         <div className={itemStyles.details}>
           <div
             className={
-              colorSample ? itemStyles.colorContainer : itemStyles.empty
+              product.color ? itemStyles.colorContainer : itemStyles.empty
             }
           >
             <span>Color: </span>
             <div
-              className={colorSample ? itemStyles.colorSample : ""}
-              style={{ backgroundColor: colorSample }}
+              className={product.color ? itemStyles.colorSample : ""}
+              style={{ backgroundColor: product.color }}
             ></div>
           </div>
           <div className={itemStyles.prices}>
-            <span className={itemStyles.price}>{price}</span>
+            <span className={itemStyles.price}>{product.price}</span>
             <span className={itemStyles.oldPrice}>
-              {(parseFloat(price) * 0.35 + parseFloat(price)).toFixed(2)}
+              {(
+                parseFloat(product.price) * 0.35 +
+                parseFloat(product.price)
+              ).toFixed(2)}
             </span>
           </div>
         </div>
@@ -74,7 +70,7 @@ const Item = ({
           <Button
             text="Add to Cart"
             classname={itemStyles.addButton}
-            onClick={() => handleClick}
+            func={()=> handleClick(product)}
           />
           <Button text="Buy Now" classname={itemStyles.buyButton} />
         </div>

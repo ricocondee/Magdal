@@ -6,7 +6,7 @@ import Button from "./Button";
 const Slider = ({ image, text }) => {
   return (
     <div className="slider">
-      <div className="slider__cta">
+      <div className="slider__callToAction">
         <strong>{text}</strong>
         <Button text="Buy now" classname="slider__button" />
       </div>

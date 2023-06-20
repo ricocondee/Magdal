@@ -1,20 +1,23 @@
 import React, { useContext } from "react";
 import AppContext from "../context/AppContext";
 import { MdDelete } from "react-icons/md";
+import cartItemStyles from "../styles/cartItem.module.css";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ product }) => {
   const { removeFromCart } = useContext(AppContext);
   const handleRemove = (item) => {
     removeFromCart(item);
   };
   return (
-    <div className="OrderItem">
-      <figure>
-        <img src={item.image[0]} alt={item.name} />
+    <div className={cartItemStyles.container}>
+      <figure className={cartItemStyles.imageContainer}>
+        <img src={product.image} alt={product.name} />
       </figure>
-      <p>{item.name}</p>
-      <p>${item.price}</p>
-      <MdDelete onClick={() => handleRemove(item)}/>
+      <div className={cartItemStyles.info}>
+        <p>{product.name}</p>
+        <p>${product.price}</p>
+        <MdDelete onClick={() => handleRemove(product)} className={cartItemStyles.delete} />
+      </div>
     </div>
   );
 };
