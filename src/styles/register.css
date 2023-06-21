@@ -1,55 +1,101 @@
 .RegisterForm-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #e6e5e5;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .RegisterForm-form {
-    width: 400px;
-    padding: 55px;
-    background-color: white;
-    margin: 5px;
-    align-items: center;
-  }
+.RegisterForm-form {
+  width: 350px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 10px;
+  align-items: center;
+  text-align: center;
+}
+.input-form{
+  width: 100%;
+  margin: 10px;
+  padding: 2px;
+  align-items: center;
+}
+.tec{
+  font-family: 'Poppins', sans-serif;
+  width: 50px;
+  white-space: nowrap;
+  margin-left: 39px;
+  font-size: 12px;
 
-  .RegisterForm-form label {
-    margin-bottom: 5px;
-  }
+  
+}
 
-  .RegisterForm-form input {
-    margin-bottom: 15px;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    align-items: center;
-  }
 
-  .RegisterForm-form button {
-    padding: 10px 110px;
-    text-align-last: center;
-    background-color: rgb(109, 227, 227);
-    color: black;
-    border: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  h1{
-    display: flex;
-    color: rgb(0, 0, 0);
-    border: none;
-    text-align: left;
-  }
-  img{
-    width: 30%;
-    padding: auto;
-    border: 5px;
-  }
-  label{
-    margin-bottom: 10px;
-    font-family: 'Times New Roman';
-    text-align: left;
-    
-  }
+.RegisterForm-form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 75%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.RegisterForm-form button {
+  padding: 10px 100px;
+  text-align-last: center;
+  background-color: rgb(109, 227, 227);
+  color: black;
+  border: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  align-items: center;
+}
+.h-form{
+  
+  padding: 5px;
+  color: black;
+  border: none;
+ 
+  font-family: 'Poppins', sans-serif;;
+  margin-right: 182px;
+}
+.img-form{
+  width: 70px;
+  height: 40px;
+  border: 5px 15px;
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.linea{
+  width: 114px;
+  display: flex;
+  justify-content: space-between;
+}
+.continue{
+ margin-left: 40px; 
+ white-space: nowrap;
+ 
+}
+hr{
+  border-bottom: 0px white;
+  background-color: #e8e8e8;
+  width: 180px;
+  margin: 10px;
+  align-items: center;
+  padding: 0%;
+}
+.registro{
+  text-align: center;
+  cursor: pointer;
+}
