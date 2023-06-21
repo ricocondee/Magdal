@@ -3,12 +3,14 @@ import { getProducts } from "../hooks/useGetProducts";
 import Button from "../components/Button";
 import "../styles/Products.css";
 import Item from "../components/Item";
+import Skeleton from "../components/Skeleton";
 
 const Products = () => {
   const [data, setData] = useState([]);
   const [visibleProducts, setVisibleProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 36
+  const productsPerPage = 36;
+  const isLoading = data.length === 0; // verifico que el state data tenga datos
 
   useEffect(() => {
     const getData = async () => {
@@ -38,16 +40,21 @@ const Products = () => {
 
   return (
     <div className="items">
-      {visibleProducts.map((product) => (
-        <Item
-          product={product}
-          key={product.id}
-        />
-      ))}
-      {currentPage < totalPages && (
-        <Button func={handleLoadMore} text='Show More' classname='showMore'/>
+      {isLoading ? ( // si no se han cargado los datos mostrar el loading
+        <Skeleton />
+      ) : (
+        visibleProducts.map((product) => (
+          <Item product={product} key={product.id} />
+        ))
       )}
-      <span className="productsQuantity">{visibleProducts.length} of {data.length}</span>
+      {currentPage < totalPages && (
+        <Button func={handleLoadMore} text="Show More" classname="showMore" />
+      )}
+      {!isLoading && (
+        <span className="productsQuantity">
+          {visibleProducts.length} of {data.length}
+        </span>
+      )}
     </div>
   );
 };

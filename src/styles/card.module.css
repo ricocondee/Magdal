@@ -25,7 +25,7 @@
 .imgContainer img {
   width: 100%;
   height: auto;
-  max-height: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .info {
@@ -61,6 +61,7 @@
   font-weight: 300;
   color: #ff0000;
   margin: 0;
+  align-self: self-start;
 }
 
 .price {
@@ -68,6 +69,7 @@
   font-size: 24px;
   color: var(--Middle-Blue-Green);
   margin: 0;
+  align-self: self-start;
 }
 
 .price::before {

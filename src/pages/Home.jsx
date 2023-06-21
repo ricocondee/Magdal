@@ -7,6 +7,7 @@ import promoProduct1 from "../assets/promoProduct.webp";
 import CategoriesImage from "../containers/CategoriesImage";
 import Brands from "../containers/Brands";
 import Products from "../containers/Products";
+import Skeleton from '../components/Skeleton'
 
 const Home = () => {
   //componente
@@ -31,7 +32,7 @@ const Home = () => {
     <>
       <div className={homeStyles.promoContainer}>
         <Slider text="50% Off On Selected Headphones" image={promoProduct1} />
-        {phones && (
+        {phones ? (
           <Card
             title={`${phones[7].brand === 1 ? "Apple" : "Samsung"} ${
               phones[7].name
@@ -40,8 +41,8 @@ const Home = () => {
             details="limited time offer"
             price={phones[7].price}
           />
-        )}
-        {phones && (
+        ) : <Skeleton/>}
+        {phones ? (
           <Card
             title={`${phones[19].brand === 1 ? "Apple" : "Samsung"} ${
               phones[19].name
@@ -50,7 +51,7 @@ const Home = () => {
             details="limited time offer"
             price={phones[19].price}
           />
-        )}
+        ) : <Skeleton/>}
       </div>
       <CategoriesImage />
       <Products />

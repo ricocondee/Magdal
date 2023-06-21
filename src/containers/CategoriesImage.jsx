@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {getProducts} from "../hooks/useGetProducts";
 import ItemImage from "../components/ItemImage";
 import catImgStyles from "../styles/categImg.module.css";
+import Skeleton from "../components/Skeleton";
 
 const CategoriesImage = () => {
   const [data, setData] = useState(null);
@@ -18,6 +19,10 @@ const CategoriesImage = () => {
     };
     getData();
   }, []);
+
+  if(!data){
+    return <Skeleton/>
+  }
 
   return (
     <div className={catImgStyles.container}>

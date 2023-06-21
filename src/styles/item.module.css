@@ -8,13 +8,13 @@
   border: 0.5px solid #0505051e;
 }
 
-.image {
+.imageContainer {
   width: 100%;
   height: max-content;
   overflow: hidden;
 }
 
-.image img {
+.imageContainer img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: contain;

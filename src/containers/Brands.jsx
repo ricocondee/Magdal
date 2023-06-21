@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BrandItem from "../components/BrandItem";
 import {getProducts} from "../hooks/useGetProducts";
 import brandsStyles from "../styles/brands.module.css";
+import Skeleton from "../components/Skeleton";
 
 const Brands = () => {
   const [data, setData] = useState(null);
@@ -18,6 +19,11 @@ const Brands = () => {
     };
     getData();
   }, []);
+
+    if(!data){
+      return <Skeleton/>
+    }
+
   return (
     <div className={brandsStyles.container}>
       <div className={brandsStyles.brands}>

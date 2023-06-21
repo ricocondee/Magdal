@@ -20,7 +20,7 @@ const Item = ({ product }) => {
 
   return (
     <div className={itemStyles.item}>
-      <div className={itemStyles.image}>
+      <div className={itemStyles.imageContainer}>
         <div className={itemStyles.favorite}>
           <label htmlFor={product.id}>
             {check ? <MdFavorite /> : <MdFavoriteBorder />}
