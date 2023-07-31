@@ -1,32 +1,51 @@
 .container{
-    width: 100%;
-    height: max-content;
+    width: 95%;
+    height: 90px;
     border: 1px solid var(--Jet-Alpha);
-    grid-area: products !important
+    display: grid;
+    grid-template-columns: 10% 85% 5%;
+    grid-template-rows: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .imageContainer{
-    width: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Persian-Green-Alpha);
 }
 
 .imageContainer img{
-    width: 124px;
-    height: max-content;
-}
+    width: 100%;
+    object-fit: cover;
+    object-fit: contain;
+} 
 
 .info{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--Middle-Blue-Green-Alpha);
 }
 
 .info p{
-    color: var(--Persian-Green);
-    font-weight: 700;
+    color: var(--Jet);
+    font-weight: 400;
+    font-style: oblique;
     font-size: 14px;
 }
 
 .delete{
     width: 100%;
-    color: red;
-    font-size: 18px;
-    font-weight: 700;
+    color: var(--Persian-Dark-Green);
+    background-color: var(--Persian-Green-Alpha);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 32px;
 }

@@ -26,7 +26,8 @@
   }
   
   .items .showMore:hover {
-    background-color: #098671;
+    background-color: var(--Middle-Blue-Green);
+    color: var(--Persian-Green);
   }
   
   .productsQuantity {

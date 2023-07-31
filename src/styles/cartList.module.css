@@ -1,14 +1,17 @@
 .container {
   min-width: 100px;
-  width: 100%;
+  width: 70%;
   height: 100%;
   background-color: #f4f4f4;
   border-right: 3px solid var(--Eerie-Black-Alpha);
+  display: flex;
+  flex-direction: column;
 }
 
-.totalContainer {
-  width: 100%;
-  height: 500px;
-  grid-area: total !important;
-  outline: auto;
+@media (max-width: 768px) {
+  .container{
+    border: none;
+    width: 95%;
+  }
+  
 }
