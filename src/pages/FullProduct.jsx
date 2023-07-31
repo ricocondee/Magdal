@@ -1,6 +1,5 @@
 import { React, useEffect, useState,} from "react";
 import fullProductStyles from "../styles/fullProduct.module.css";
-import description from "../hooks/useDescription";
 import Button from "../components/Button";
 import { handleProductData } from "../hooks/useGetProducts"; //importo a modo hook la funcion abstracta para obtener el producto seleccionado
 
@@ -44,7 +43,7 @@ const FullProduct = ({product}) => {
             <h1>
               {prod.name} {prod.color}
             </h1>
-            <p>{description[prod.id]}</p>
+            <p>{prod.description}</p>
             <div className={fullProductStyles.specs}>
               <ul>
                 {prod.so === null ? "" : <li>{prod.so}</li>}
