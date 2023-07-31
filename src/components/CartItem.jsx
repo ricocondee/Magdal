@@ -14,10 +14,12 @@ const CartItem = ({ product }) => {
         <img src={product.image} alt={product.name} />
       </figure>
       <div className={cartItemStyles.info}>
-        <p>{product.name}</p>
-        <p>${product.price}</p>
-        <MdDelete onClick={() => handleRemove(product)} className={cartItemStyles.delete} />
+        <strong>{product.name}</strong>
+        <span>${product.price}</span>
+        <p>{product.description}</p>
       </div>
+      <div className={cartItemStyles.delete}><MdDelete onClick={() => handleRemove(product)} /></div>
+      
     </div>
   );
 };
