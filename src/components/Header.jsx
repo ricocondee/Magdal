@@ -38,8 +38,7 @@ const Header = () => {
         <div className="search">
           <div className="search__box">
             <SelectCategories />
-            { //do an specific search such as "iphone, samsung, shirt, skirt, shoes, etc."}
-            <input type="text" name="search" id="search" placeholder="Specific Search" onChange={(ev)=> setWord(ev.target.value)}/>
+            <input type="text" name="search" id="search" placeholder="Specific Search" onChange={(ev)=> setWord(ev.target.value)}/>{/* //do an specific search such as "iphone, samsung, shirt, skirt, shoes, etc." */}
             <div className="MdSearch">
              <Link to='/search' onClick={handleSearch} ><MdSearch  /></Link> 
             </div>
