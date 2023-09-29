@@ -12,10 +12,7 @@ function RegisterForm() {
     console.log('Password:', password);
   };
 
-  const handleGoogleLogin = () => {
-    console.log('registrar con google');
-  };
-
+  // delete handleGoogleLogin
   return (
     <div className="RegisterForm-container"> 
       
@@ -59,9 +56,9 @@ function RegisterForm() {
           <div><hr className='linea'/></div>
           </div><br />
         <div>
-          <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" alt="" className='img-form' />
-          <img src="https://cdn.worldvectorlogo.com/logos/meta-1.svg" className='img-form' />
-          <img src="https://cdn.worldvectorlogo.com/logos/apple-13.svg" className='img-form' />
+          <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" alt="google logo" className='img-form' />
+          <img src="https://cdn.worldvectorlogo.com/logos/meta-1.svg" className='img-form' alt="meta logo "/>
+          <img src="https://cdn.worldvectorlogo.com/logos/apple-13.svg" className='img-form' alt="apple logo"/>
         </div>
         <button type="button" onClick={handleLogin}>
           Sign up

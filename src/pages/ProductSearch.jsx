@@ -25,7 +25,7 @@ const ProductSearch = () => {
     }else{
       setLoaded(false)//reiniciamos el loaded para que permita hacer una nueva busqueda.
     }
-  }, [search, data]);
+  }, [search, data, loaded]);// fix el error de dependencia faltante en el Hook useEffect // add "loaded" como dependencia en el arreglo de dependencias de useEffect
   return (
     <div className={searchStyles.items}>
       {data.map((searched) => (

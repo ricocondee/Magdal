@@ -37,9 +37,9 @@ function Login() {
           <div><hr className='linea'/></div>
           </div><br /><br />
         <div>
-          <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" className='img-form'/>
-          <img src="https://cdn.worldvectorlogo.com/logos/meta-1.svg" className='img-form' />
-          <img src="https://cdn.worldvectorlogo.com/logos/apple-13.svg" className='img-form' />
+          <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" className='img-form' alt="google logo"/>
+          <img src="https://cdn.worldvectorlogo.com/logos/meta-1.svg" className='img-form' alt="meta logo" />
+          <img src="https://cdn.worldvectorlogo.com/logos/apple-13.svg" className='img-form' alt="apple logo"/>
         </div>
         <button type="button" onClick={handleLogin}>
           log in
