@@ -64,7 +64,7 @@ function RegisterForm() {
           Sign up
         </button>
         <div className='login'>
-          <a href="">log in</a>
+          <a href="/login">log in</a>
 
         </div>
       </form>
