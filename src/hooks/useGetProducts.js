@@ -12,7 +12,7 @@ export const handleProductData = async(itemId) =>{//funcion para obtener product
   try {
     localStorage.removeItem('itemID'); //elimino el local storage para cada que se ingrese al producto pueda sel el requerido
     localStorage.setItem('itemID', itemId);//sete el valor de la clave en el localStorage para usarla despues
-    const resp = await fetch(`https://magdal.live/api/products/${itemId}`)//fetch de la API, [A MEJORAR]
+    const resp = await fetch(`https://store-api-d3d0-dev.fl0.io/api/products/${itemId}`)//fetch de la API, [A MEJORAR]
     return await resp.json()
   } catch (error) {
     throw error
