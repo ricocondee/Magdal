@@ -5,7 +5,7 @@ const SelectCategories = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      const API = "https://store-api-d3d0-dev.fl0.io";
+      const API = "https://storeapi-dev.fl0.io";
       const end = "api/categories";
       try {
         const data = await getProducts(API, end);

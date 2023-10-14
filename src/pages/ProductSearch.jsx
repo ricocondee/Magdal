@@ -10,7 +10,7 @@ const ProductSearch = () => {
   const [loaded, setLoaded] = useState(false);//estado para manejar la carga de la busqueda
   useEffect(() => {
     const getData = async () => {
-      const API = "https://store-api-d3d0-dev.fl0.io";
+      const API = "https://storeapi-dev.fl0.io";
       const end = `api/products/search/${search}`;
       try {
         const fetchedData = await getProducts(API, end);
