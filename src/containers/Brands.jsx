@@ -8,7 +8,7 @@ const Brands = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      const API = "https://magdal.live";
+      const API = "https://storeapi.ricocondee.dev";
       const end = "api/brands";
       try {
         const data = await getProducts(API, end);

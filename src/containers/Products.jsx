@@ -14,7 +14,7 @@ const Products = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const API = "https://magdal.live";
+      const API = "https://storeapi.ricocondee.dev";
       const end = "api/products/";
       try {
         const fetchedData = await getProducts(API, end);
